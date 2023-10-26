@@ -10,7 +10,7 @@ class RatingBar extends StatelessWidget {
     return RatingBarIndicator(
       rating: rating,
       itemCount: 5,
-      itemSize: 30.0,
+      itemSize: 25.0,
       physics: const BouncingScrollPhysics(),
       itemBuilder: (context, _) => const Icon(
         Icons.star,
