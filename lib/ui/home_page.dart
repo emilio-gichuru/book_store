@@ -1,4 +1,5 @@
 import 'package:book_store/domain/model/book_model.dart';
+import 'package:book_store/ui/search_page.dart';
 import 'package:book_store/utilities/app_constants.dart';
 import 'package:book_store/utilities/app_images.dart';
 import 'package:book_store/utilities/color_constants.dart';
@@ -383,37 +384,43 @@ class SearchContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: height * 0.065,
-      width: width,
-      padding: const EdgeInsets.all(8),
-      margin: const EdgeInsets.all(8),
-      decoration: BoxDecoration(
-        color: white,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Row(
-        children: [
-          SizedBox(
-            width: width * 0.05,
-          ),
-          const Icon(
-            Icons.search,
-            color: black,
-            size: 20,
-          ),
-          SizedBox(
-            width: width * 0.05,
-          ),
-          Text(
-            "Find the book",
-            style: GoogleFonts.inter(
-              fontSize: 15,
-              fontWeight: FontWeight.w700,
-              color: grey,
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => const SearchPage()));
+      },
+      child: Container(
+        height: height * 0.065,
+        width: width,
+        padding: const EdgeInsets.all(8),
+        margin: const EdgeInsets.all(8),
+        decoration: BoxDecoration(
+          color: white,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Row(
+          children: [
+            SizedBox(
+              width: width * 0.05,
             ),
-          ),
-        ],
+            const Icon(
+              Icons.search,
+              color: black,
+              size: 20,
+            ),
+            SizedBox(
+              width: width * 0.05,
+            ),
+            Text(
+              "Find the book",
+              style: GoogleFonts.inter(
+                fontSize: 15,
+                fontWeight: FontWeight.w700,
+                color: grey,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
